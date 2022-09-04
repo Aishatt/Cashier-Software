@@ -2,16 +2,19 @@
 def accept_product():
     buyingData={}
     product_details= True
-    #product_detail is our flag variable with default value of True
-    while(product_details):
-        details=input("Press A to continue and Q to quit ")
-    if details== 'A':
-        product=str(input("Enter product \n"))
-        quantity=int(input("Enter quantity \n"))
-    elif details== 'Q':
-        product_details= False
-    else:
-        print("please select correct option")
+    
+    while product_details:
+        details = str( input("Press A to continue and Q to quit: \n "))
+        if details == 'A':
+            product= str(input("Enter product: "))
+            quantity= int(input("Enter quantity: "))
+            buyingData.update({product:quantity})
+        elif details == 'Q':
+            product_details = False
+        else:
+            print("please select correct option")
+           
+    return buyingData 
+   
 
-   # print(update(buyingData))
-    return accept_product        
+accept_product()           
